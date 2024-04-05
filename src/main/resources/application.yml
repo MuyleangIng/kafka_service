@@ -25,7 +25,7 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
   kafka:
-    bootstrap-servers: http://188.166.232.117:9092
+    bootstrap-servers: http://localhost:9092
     consumer:
       auto-offset-reset: earliest
 
