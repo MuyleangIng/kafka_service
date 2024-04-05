@@ -1,0 +1,34 @@
+# server port
+server:
+  port: 8092
+
+# application name
+spring:
+  application:
+    name: notification-service
+
+# configuration JPA and POSTGRES
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    password: admin123
+    username: postgres
+    url: jdbc:postgresql://localhost:5432/postgres
+
+  jpa:
+    open-in-view: true
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+  kafka:
+    bootstrap-servers: http://188.166.232.117:9092
+    consumer:
+      auto-offset-reset: earliest
+
+logging:
+  level:
+    org.springframework.kafka: debug
